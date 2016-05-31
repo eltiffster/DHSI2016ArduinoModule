@@ -251,7 +251,6 @@ For this sketch, we will use a different actuator—a servo motor—and control 
 ####Example Projects
 Waves of Leaves by Soyoung Park: <http://www.shine-sy.com/wavesofleaves/>
 Stroboscope/Zoetrope by MrScripster: <https://www.youtube.com/watch?v=fSy2JYkdn-c> 
-Slapping Hand Alarm Clock by Simone Giertz: <http://makezine.com/2015/11/14/slap-yourself-awake-with-this-ridiculous-wake-up-machine-alarm-clock/>
 Chopping Machine by Simone Giertz: <https://youtu.be/ISPnkVMxkcs?t=1m29s>
 
 ## <a name="seven"></a>Exercise 7 - Make Your Own!
@@ -275,7 +274,8 @@ For the rest of the session, you can experiment with different combinations of s
 ####What other things can Arduinos do? SO MANY things!
 * Botanicalls: Measure moisture in your plant's soil and tweet at you when your plant is thirsty. (<https://www.botanicalls.com/>)
 * Light up your 3D-printed coat buttons. Project by Ruiz brothers. (<https://learn.adafruit.com/neopixel-coat-buttons>)
-* The Cover That Judges You: Scan your face for emotions and unlock a book only when you're straight-faced. (<http://thecoverthatjudgesyou.com/>)
+* The Cover That Judges You by Thijs Biersteker: Scan your face for emotions and unlock a book only when you're straight-faced. (<http://thecoverthatjudgesyou.com/>)
+* Spam Poetry by Varvara Guljajeva and Mar Canet Sola: Knit a spam poetry sweater for you. (<http://www.mcanet.info/blog/?p=404>) 
 * Netflix socks: Automatically pause Netflix when you've fallen asleep watching it. (<http://makeit.netflix.com/>)
 * Electronic Popables by Jie Qi, with Leah Buckley and Tshen Chew. (<http://technolojie.com/454/>)
 
