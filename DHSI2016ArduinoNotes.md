@@ -156,7 +156,7 @@ Now that we have the LED blinking, let’s add a button as a digital input senso
 
 Now we're going to work with sound instead of light, using a piezo. A piezo is a small device that can both detect and play tones (that is, it can act as a sensor or an actuator). For this exercise, we're going to use it to play some notes.
 
-<img src="DHSIArduinoImages/piezo.jpg" width="600"/>&nbsp;
+![](DHSIArduinoImages/piezo.jpg)
 *Image of piezo buzzer/sounder care of Adafruit.*
 
 <img src="DHSIArduinoImages/playScale.jpg">
@@ -170,10 +170,10 @@ Now we're going to work with sound instead of light, using a piezo. A piezo is a
 * I am piezo, hear me roar!
 
 ####More Things to Try
-* Experiment with different notes and/or melodies by changing the values in the ```tones[]``` array. (If you change the number of tones, remember to change numTones to match!)
+* Experiment with different notes and/or melodies by changing the values in the `tones[]` array. (If you change the number of tones, remember to change numTones to match!)
   * Use [this list](http://www.phy.mtu.edu/~suits/notefreqs.html) to find the frequency for each note (C4 = middle C).
-  * You can also modify the length of each note by adding a comma and an extra value after ```tones[i]``` (see the [Reference page](https://www.arduino.cc/en/Reference/Tone) for ```tone()```). For example, to play each note for half a second, the whole line would read as ```tone(speakerPin, tones[i], 500);```, where 500 is the length in milliseconds.
-  * As with Exercise 2, you can also change the value in ```delay()``` to shorten or lengthen the delay (in milliseconds) between each note.
+  * You can also modify the length of each note by adding a comma and an extra value after `tones[i]` (see the [Reference page](https://www.arduino.cc/en/Reference/Tone) for `tone()`). For example, to play each note for half a second, the whole line would read as `tone(speakerPin, tones[i], 500);`, where 500 is the length in milliseconds.
+  * As with Exercise 2, you can also change the value in `delay()` to shorten or lengthen the delay (in milliseconds) between each note.
 
 ####Example Projects
 * Knock: <https://www.youtube.com/watch?v=1SNC3ib10_4>. This project uses a piezo as a sensor instead of an actuator.
