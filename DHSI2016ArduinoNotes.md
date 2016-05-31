@@ -225,9 +225,9 @@ You can measure many different kinds of analog input (e.g. temperature, light, m
 * Throwback to earlier today when we were blinking LEDs. This extra exercise will adjust the blinking speed of an LED with the help of a photocell. Connect an LED to pin 13 and GND as in the Blink exercise. Swap out your 1k ohm resistor for a 10k ohm resistor (brown-black-orange — yes, they are confusingly similar). Open the analogInput sketch by going to *File > Examples > 3. Analog > AnalogInput*. Upload and compile it. Have fun!
 
 ####Example Projects
-Laser Trip Wire by Ronnie Tucker: <https://www.youtube.com/watch?v=efA9lwmE5zA>
-Little Slide Dress by Emily Steel: <https://www.behance.net/gallery/>Little-Slide-Dress/3932109
-Sunscreen Reminder Hat by Becky Stern: <https://learn.adafruit.com/sunscreen-reminder-hat/overview>
+* Laser Trip Wire by Ronnie Tucker: <https://www.youtube.com/watch?v=efA9lwmE5zA>
+* Little Slide Dress by Emily Steel: <https://www.behance.net/gallery/Little-Slide-Dress/3932109>
+* Sunscreen Reminder Hat by Becky Stern: <https://learn.adafruit.com/sunscreen-reminder-hat/overview>
 
 
 ## <a name="six"></a>Exercise 6 - From Pot to Servo
@@ -249,9 +249,9 @@ For this sketch, we will use a different actuator—a servo motor—and control 
 * The servo should automatically rotate to the position indicated by the position of the potentiometer. Try rotating the dial on the potentiometer—the servo should move accordingly. It may or may not shake or vibrate—this just means that it’s receiving too much voltage through the upper limit of the potentiometer. Just rotate the potentiometer until the servo runs smoothly.
 
 ####Example Projects
-Waves of Leaves by Soyoung Park: <http://www.shine-sy.com/wavesofleaves/>
-Stroboscope/Zoetrope by MrScripster: <https://www.youtube.com/watch?v=fSy2JYkdn-c> 
-Chopping Machine by Simone Giertz: <https://youtu.be/ISPnkVMxkcs?t=1m29s>
+* Waves of Leaves by Soyoung Park: <http://www.shine-sy.com/wavesofleaves/>
+* Stroboscope/Zoetrope by MrScripster: <https://www.youtube.com/watch?v=fSy2JYkdn-c>
+* Chopping Machine by Simone Giertz: <https://youtu.be/ISPnkVMxkcs?t=1m29s>
 
 ## <a name="seven"></a>Exercise 7 - Make Your Own!
 
