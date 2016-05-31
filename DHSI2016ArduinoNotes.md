@@ -1,5 +1,7 @@
 # Day 1: Arduino
 
+*By Tiffany Chan, based on notes by Nina Belojevic and Shaun MacPherson.*
+
 ## Overview
 
 * [What is Arduino?](#intro)
@@ -277,7 +279,7 @@ For the rest of the session, you can experiment with different combinations of s
 * Netflix socks: Automatically pause Netflix when you've fallen asleep watching it. (<http://makeit.netflix.com/>)
 * Electronic Popables by Jie Qi, with Leah Buckley and Tshen Chew. (<http://technolojie.com/454/>)
 
-Where can I find more Arduino projects and/or tutorials?
+####Where can I find more Arduino projects and/or tutorials?
 * Arduino: <https://www.arduino.cc/en/Tutorial/HomePage>
 * Adafruit: <https://learn.adafruit.com/category/learn-arduino>
 * Sparkfun: <https://learn.sparkfun.com/tutorials/tags/arduino>
