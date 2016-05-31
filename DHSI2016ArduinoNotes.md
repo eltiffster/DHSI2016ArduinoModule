@@ -154,11 +154,12 @@ Now that we have the LED blinking, let’s add a button as a digital input senso
 
 Now we're going to work with sound instead of light, using a piezo. A piezo is a small device that can both detect and play tones (that is, it can act as a sensor or an actuator). For this exercise, we're going to use it to play some notes.
 
-<img src="DHSIArduinoImages/piezo.jpg">
+<img src="DHSIArduinoImages/piezo.jpg" width="800">
 *Image of piezo buzzer/sounder care of Adafruit.*
 
 <img src="DHSIArduinoImages/playScale.jpg">
 <img src="DHSIArduinoImages/playScale2.jpg">
+
 *Image care of Simon Monk (<https://learn.adafruit.com/adafruit-arduino-lesson-10-making-sounds/playing-a-scale>).*
 
 * Insert the piezo to the breadboard. Connect one leg of the piezo to 5V and the other to pin 12. For these particular piezos, unlike the LED, it does not matter which leg connects to pin 12 and which connects to GND.
@@ -185,6 +186,7 @@ Now we're going to work with sound instead of light, using a piezo. A piezo is a
 Next, let’s incorporate analog input. Instead of allowing for only two states (On/Off or High/Low), analog input translates voltage (from 0 to 5 volts) into numbers between 0 and 1024. For this exercise, we're going to use a potentiometer, or "pot," to modify the piezo's pitch.
 
 <img src="DHSIArduinoImages/tonePitchFollower.png"/>
+
 *Image care of Oscar Liang. (<https://oscarliang.com/using-potentiometer-to-control-piezo-speaker-for-v/>)*
 
 * Insert the potentiometer into the breadboard. The pot has three legs: connect the middle leg to analog pin A0, one of the outer legs (doesn't matter which) to (+) or 5V and the other to (-) or GND.
@@ -203,7 +205,8 @@ Next, let’s incorporate analog input. Instead of allowing for only two states 
 
 You can measure many different kinds of analog input (e.g. temperature, light, moisture) using different sensors for the Arduino. We will now use a different sensor to modify the piezo's pitch. For this exercise, we're going to replace the potentiometer with a photocell or photoresistor to create a pseudo-theremin, based on the original [theremin instrument](https://www.youtube.com/watch?v=pSzTPGlNa5U). Where the theremin's pitch varied with the player's hand position, the pseudo-theremin's pitch varies with the amount of light that the photocell receives.
 
-<img src="DHSIArduinoImages/photocell.jpg">
+<img src="DHSIArduinoImages/photocell.jpg" width="800">
+
 *Image of a photocell care of Adafruit. (<https://learn.adafruit.com/photocells/using-a-photocell>)*
 
 <img src="DHSIArduinoImages/pseudotheremin.jpg">
@@ -253,21 +256,21 @@ Chopping Machine by Simone Giertz: <https://youtu.be/ISPnkVMxkcs?t=1m29s>
 
 For the rest of the session, you can experiment with different combinations of sensors, actuators, and code. We also have foil for touch sensors, flex sensors, LCD displays, and temperature sensors. Here are some tutorials to get started:
 
-Temperature
+####Temperature
 * Using a Temp Sensor: <https://learn.adafruit.com/tmp36-temperature-sensor/using-a-temp-sensor>
 * Love-o-meter: <http://runningwithcodes.blogspot.ca/2014/02/building-love-o-meter-by-using.html>
 
-LCD Displays
+####LCD Displays
 * Print "Hello World!" to the display: <https://www.arduino.cc/en/Tutorial/HelloWorld>
 * Using a temperature sensor, photocell, and potentiometer, measure light level and temperature and print them to the LCD display: <https://learn.adafruit.com/adafruit-arduino-lesson-12-lcd-displays-part-2/overview>
 
-Touch/Flex Sensors
+####Touch/Flex Sensors
 * Capacitive Touch Sensor, using the CapSense library:
   * with foil: <http://www.instructables.com/id/How-To-Use-Touch-Sensors-With-Arduino/>
   * with a pencil drawing: <http://www.instructables.com/id/Turn-a-pencil-drawing-into-a-capacitive-sensor-for/>
 * Flex Sensor: <https://learn.sparkfun.com/tutorials/sik-experiment-guide-for-arduino---v32/experiment-9-using-a-flex-sensor>
 
-What other things can Arduinos do? SO MANY things!
+####What other things can Arduinos do? SO MANY things!
 * Botanicalls: Measure moisture in your plant's soil and tweet at you when your plant is thirsty. (<https://www.botanicalls.com/>)
 * Light up your 3D-printed coat buttons. Project by Ruiz brothers. (<https://learn.adafruit.com/neopixel-coat-buttons>)
 * The Cover That Judges You: Scan your face for emotions and unlock a book only when you're straight-faced. (<http://thecoverthatjudgesyou.com/>)
