@@ -19,11 +19,11 @@
 
 ## <a name="intro"></a> What is Arduino?
 
-An Arduino is basically an open source, tiny computer made for tinkering, prototyping. It can also be used as a dedicated component in an interactive project (e.g. soldered to other parts or sewn into clothing)--hence the small size and lowish cost. Arduino combines open-source hardware, an integrated development environment (IDE) software, and a simplified version of the C/C++ programming languages that even non-programmers can use to write code for the Arduino board.
+An Arduino is basically an open source, tiny computer made for tinkering, prototyping. It can also be used as a dedicated component in an interactive project (e.g. soldered to other parts or sewn into clothing)—hence the small size and lowish cost. Arduino combines open-source hardware, an integrated development environment (IDE) software, and a simplified version of the C/C++ programming languages that even non-programmers can use to write code for the Arduino board.
 
 In this module, we will be using the Arduino for *physical computing*—that is, to sense and interact with the physical world. In practice, this involves converting one form of energy into another: for example, electrical signals into some kind of physical energy (e.g. light, sound, motion) or vice versa. When combined with other components or computers (e.g. the [Raspberry Pi](https://www.raspberrypi.org/help/what-is-a-raspberry-pi/)), the Arduino can do even more complicated things. Arduinos are commonly used in home monitoring projects (e.g. tripwire alarm, thermostat), wearables, and robotics. Throughout, I will talk about some example projects out in the wild that build on concepts we learn.
 
-<img src="img/interactiveDevice.png"/>
+<img src="DHSIArduinoImages/interactiveDevice.png"/>
 *"The Interactive Device," from* Getting Started with Arduino *by Massimo Banzi.*
 
 ## <a name="terminology"></a>Some Terminology
@@ -46,6 +46,8 @@ In this module, we will be using the Arduino for *physical computing*—that is,
 * **Servomotor** or "servo": a servomotor is a type of rotary actuator that receives data that directs its speed and final position. This data is typically controlled by some kind of variable resistance, such as a potentiometer or photoresistor.
 * **The Arduino Integrated Development Environment (IDE)**: a special software program designed for you to write sketches that can be loaded onto your Arduino to effect certain behaviours. The programming language for Arduino is modelled after Processing (https://processing.org/download/) and based on the C/C++ languages. The software has a compiler built into it, which translates the sketch you write into a language understood by the Arduino microcontroller.
 * **Sketch**: the block of code that you write, import, and/or upload to run on the Arduino board. This is what shows up in the whit part of the IDE window.
+* **Piezo**: this term can refer to either a sensor or actuator of sound. We will mostly use it as an actuator, where it is commonly called a "piezo buzzer" or "piezo sounder." When an electric signal passes through a crystal in the piezo, it rapidly expands and contracts at a frequency that we interpret as sound.
+* **Serial Monitor**: a built-in feature of the IDE that is useful for debugging or troubleshooting. For example, you can check values from various sensors in real time by printing them to the monitor.
 
 ## <a name="setup-a"></a> Setup A – Install the IDE
 
@@ -65,7 +67,8 @@ In this module, we will be using the Arduino for *physical computing*—that is,
 
 ## <a name="setup-c"></a> Setup C - Putting It All Together
 
-<img src="img/boardDiagram.jpg">
+<img src="DHSIArduinoImages/boardDiagram.jpg">
+
 *Image care of Sravanthi Sinha via [SlideShare.net.](http://www.slideshare.net/SravanthiSinha/magnetic-door-lock-using-arduino-16578354)*
 
 ### The board:
@@ -76,7 +79,7 @@ In this module, we will be using the Arduino for *physical computing*—that is,
 * Analog In pins 0-5 - you can hook up analog sensors to these pins.
 * Analog Out pins 2, 5, 6, 9, 10, 11 - you can program these digital pins to output for analog actuators. (If you look closely, the Analog Out pins have a ~ or # symbol beside the number.)
 
-<img src="img/breadboard.jpg">
+<img src="DHSIArduinoImages/breadboard.jpg">
 *Image of the breadboard, care of learn.sparkfun.com*
 
 ### The breadboard:
@@ -84,7 +87,8 @@ In this module, we will be using the Arduino for *physical computing*—that is,
   * e.g. if you connect a jumper cable to b4 and an LED to g4, they become part of the same circuit
 * For some of the exercises, we will be connecting sensors and actuators to the breadboard and connecting the breadboard to the Arduino board
 
-<img src="img/IDE.png">
+<img src="DHSIArduinoImages/IDE.png">
+
 *Image of the Arduino IDE, care of jeelabs.net*
 
 ### The IDE:
@@ -120,7 +124,7 @@ In this module, we will be using the Arduino for *physical computing*—that is,
 
 Now that we have the LED blinking, let’s add a button as a digital input sensor to control when it turns on or off.
 
-* For this exercise, we are going to connect the power source to two of the columns on the breadboard. Connect the 5V pin to the (+) column and the GND pin to the (-) column. It doesn't matter which side of breadboard you use -- just make sure the (+) and (-) column you connect are on the same side. Now any sensor or actuator you connect to (+) on the breadboard will be connected to 5V and any sensor or actuator you connect to (-) on the breadboard will be connected to GND.
+* For this exercise, we are going to connect the power source to two of the columns on the breadboard. Connect the 5V pin to the (+) column and the GND pin to the (-) column. It doesn't matter which side of breadboard you use — just make sure the (+) and (-) column you connect are on the same side. Now any sensor or actuator you connect to (+) on the breadboard will be connected to 5V and any sensor or actuator you connect to (-) on the breadboard will be connected to GND.
   * For more on the breadboard, see here: <http://www.instructables.com/id/Breadboard-How-To/>
 * Insert the button across the middle bridge on the breadboard. Hook up the bottom left leg of the button to 5V on the Arduino. Hook up the top right leg of the button to digital pin 2. Add the 10k Ohm resistor (brown-black-orange) with one leg along the same path as the bottom right leg of the button, and then connect the other leg of the resistor to GND.
 
@@ -150,11 +154,11 @@ Now that we have the LED blinking, let’s add a button as a digital input senso
 
 Now we're going to work with sound instead of light, using a piezo. A piezo is a small device that can both detect and play tones (that is, it can act as a sensor or an actuator). For this exercise, we're going to use it to play some notes.
 
-<img src="img/piezo.jpg">
+<img src="DHSIArduinoImages/piezo.jpg">
 *Image of piezo buzzer/sounder care of Adafruit.*
 
-<img src="img/playScale.jpg">
-<img src="img/playScale2.jpg">
+<img src="DHSIArduinoImages/playScale.jpg">
+<img src="DHSIArduinoImages/playScale2.jpg">
 *Image care of Simon Monk (<https://learn.adafruit.com/adafruit-arduino-lesson-10-making-sounds/playing-a-scale>).*
 
 * Insert the piezo to the breadboard. Connect one leg of the piezo to 5V and the other to pin 12. For these particular piezos, unlike the LED, it does not matter which leg connects to pin 12 and which connects to GND.
@@ -180,7 +184,7 @@ Now we're going to work with sound instead of light, using a piezo. A piezo is a
 
 Next, let’s incorporate analog input. Instead of allowing for only two states (On/Off or High/Low), analog input translates voltage (from 0 to 5 volts) into numbers between 0 and 1024. For this exercise, we're going to use a potentiometer, or "pot," to modify the piezo's pitch.
 
-<img src="img/tonePitchFollower.png"/>
+<img src="DHSIArduinoImages/tonePitchFollower.png"/>
 *Image care of Oscar Liang. (<https://oscarliang.com/using-potentiometer-to-control-piezo-speaker-for-v/>)*
 
 * Insert the potentiometer into the breadboard. The pot has three legs: connect the middle leg to analog pin A0, one of the outer legs (doesn't matter which) to (+) or 5V and the other to (-) or GND.
@@ -199,10 +203,10 @@ Next, let’s incorporate analog input. Instead of allowing for only two states 
 
 You can measure many different kinds of analog input (e.g. temperature, light, moisture) using different sensors for the Arduino. We will now use a different sensor to modify the piezo's pitch. For this exercise, we're going to replace the potentiometer with a photocell or photoresistor to create a pseudo-theremin, based on the original [theremin instrument](https://www.youtube.com/watch?v=pSzTPGlNa5U). Where the theremin's pitch varied with the player's hand position, the pseudo-theremin's pitch varies with the amount of light that the photocell receives.
 
-<img src="img/photocell.jpg">
+<img src="DHSIArduinoImages/photocell.jpg">
 *Image of a photocell care of Adafruit. (<https://learn.adafruit.com/photocells/using-a-photocell>)*
 
-<img src="img/pseudotheremin.jpg">
+<img src="DHSIArduinoImages/pseudotheremin.jpg">
 *Diagram care of Simon Monk. (<https://learn.adafruit.com/adafruit-arduino-lesson-10-making-sounds/pseudo-theramin>)*
 
 * The piezo should still be connected to the Arduino from the last exercise. If not, reattach it to the breadboard and Arduino board. Connect one leg to digital Pin 2 and the other to GND.
@@ -213,7 +217,7 @@ You can measure many different kinds of analog input (e.g. temperature, light, m
 * Wave your hand or another object over the photocell to vary the pitch. Try moving your hand closer or farther away from the photocell.
 
 ####More Things to Try
-* Throwback to earlier today when we were blinking LEDs. This extra exercise will adjust the blinking speed of an LED with the help of a photocell. Connect an LED to pin 13 and GND as in the Blink exercise. Swap out your 1k ohm resistor for a 10k ohm resistor (brown-black-orange -- yes, they are confusingly similar). Open the analogInput sketch by going to *File > Examples > 3. Analog > AnalogInput*. Upload and compile it. Have fun!
+* Throwback to earlier today when we were blinking LEDs. This extra exercise will adjust the blinking speed of an LED with the help of a photocell. Connect an LED to pin 13 and GND as in the Blink exercise. Swap out your 1k ohm resistor for a 10k ohm resistor (brown-black-orange — yes, they are confusingly similar). Open the analogInput sketch by going to *File > Examples > 3. Analog > AnalogInput*. Upload and compile it. Have fun!
 
 ####Example Projects
 Laser Trip Wire by Ronnie Tucker: <https://www.youtube.com/watch?v=efA9lwmE5zA>
