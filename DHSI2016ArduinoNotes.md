@@ -10,12 +10,12 @@
   * [A. The IDE](#setup-a)
   * [B. Serial Port and Board Selection](#setup-b)
   * [C. Putting It All Together](#setup-c)
-* [Exercise 1 - Blink](#one)
-* [Exercise 2 - Button](#two)
-* [Exercise 3 - From LED to Piezo](#three)
-* [Exercise 4 - From Digital to Analog](#four)
-* [Exercise 5 - From Light to Sound](#five)
-* [Exercise 6 - From Sound to Motion](#six)
+* [Exercise 1 - Blinking LED](#one)
+* [Exercise 2 - Blink to Button](#two)
+* [Exercise 3 - LED to Piezo](#three)
+* [Exercise 4 - Digital to Analog](#four)
+* [Exercise 5 - Light to Sound](#five)
+* [Exercise 6 - Sound to Motion](#six)
 * [Exercise 7 - Make Your Own!](#seven)
 
 
@@ -106,7 +106,7 @@ In this module, we will be using the Arduino for *physical computing*—that is,
   * If the sketch compiles fine but you get the error message after clicking the arrow, check to make sure you have the right port and board selected (under *Tools*)
   * If everything compiles and uploads fine, check your circuits and breadboard to make sure everything is connected properly
 
-## <a name="one"></a>Exercise 1 – Blink
+## <a name="one"></a>Exercise 1 – Blinking LED
 
 * Plug an LED into pin 13 and GND. The longer leg, the Anode (+), should go into pin 13. The shorter leg, the Cathode (-), goes into GND.
 
@@ -122,7 +122,7 @@ In this module, we will be using the Arduino for *physical computing*—that is,
 * If everything works fine, you should now see the LED turn on for a second and then off for a second. If not, let’s troubleshoot together.
 
 
-## <a name="two"></a>Exercise 2 – Button
+## <a name="two"></a>Exercise 2 – Blink to Button
 
 Now that we have the LED blinking, let’s add a button as a digital input sensor to control when it turns on or off.
 
@@ -152,11 +152,11 @@ Now that we have the LED blinking, let’s add a button as a digital input senso
 * Easy LED Colour Organ: <https://www.youtube.com/watch?v=wJlglHS2w74>
 
 
-## <a name="three"></a>Exercise 3 - From LED to Piezo
+## <a name="three"></a>Exercise 3 - LED to Piezo
 
 Now we're going to work with sound instead of light, using a piezo. A piezo is a small device that can both detect and play tones (that is, it can act as a sensor or an actuator). For this exercise, we're going to use it to play some notes.
 
-<img src="DHSIArduinoImages/piezo.jpg" width="800">
+<img src="DHSIArduinoImages/piezo.jpg" width="600"/>&nbsp;
 *Image of piezo buzzer/sounder care of Adafruit.*
 
 <img src="DHSIArduinoImages/playScale.jpg">
@@ -207,7 +207,7 @@ Next, let’s incorporate analog input. Instead of allowing for only two states 
 
 You can measure many different kinds of analog input (e.g. temperature, light, moisture) using different sensors for the Arduino. We will now use a different sensor to modify the piezo's pitch. For this exercise, we're going to replace the potentiometer with a photocell or photoresistor to create a pseudo-theremin, based on the original [theremin instrument](https://www.youtube.com/watch?v=pSzTPGlNa5U). Where the theremin's pitch varied with the player's hand position, the pseudo-theremin's pitch varies with the amount of light that the photocell receives.
 
-<img src="DHSIArduinoImages/photocell.jpg" width="800">
+<img src="DHSIArduinoImages/photocell.jpg" width="600"/>
 
 *Image of a photocell care of Adafruit. (<https://learn.adafruit.com/photocells/using-a-photocell>)*
 
