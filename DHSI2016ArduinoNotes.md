@@ -56,12 +56,11 @@ In this module, we will be using the Arduino for *physical computing*—that is,
 * Download Arduino software (<http://www.arduino.cc/en/Main/Software>) 
 * Mac: Once you’ve downloaded the IDE, you should see it in your downloads folder (or in the folder that your downloaded files get saved in). You should now be able to open the IDE by double clicking on the icon. Feel free to move it into a different folder (e.g. Applications). Once you’ve opened the software, plug in the USB connector we’ve provided.
 * PC: When you download the Arduino IDE, you should be prompted to install Arduino. Follow the directions and install it in your Program Files or whereever you would like to save it to. Once the process is complete, open the Arduino program and plug in the USB connector we’ve provided.
-* A Note on High DPI monitors: If your computer is fairly new, you might notice that the IDE's font is very tiny. If this happens, go to *File > Preferences*. Under *Interface Scale*, uncheck *Automatic* and increase the percentage next to it. It may take a bit of experimentation to get the scale right (remember that you have to restart Arduino each time you adjust it). You can also adjust the font size of the code in the window by changing *Editor Font Size*.
+* A Note on High DPI monitors: If your computer is fairly new, you might notice that the IDE's font is very tiny. If this happens, go to *File > Preferences*. Under *Interface Scale*, uncheck *Automatic* and increase the percentage next to it. It may take a bit of experimentation to get the scale right (remember that you have to restart the IDE each time you adjust it). You can also adjust the font size of the code in the window by changing *Editor Font Size*.
 
 ## <a name="setup-b"></a>Setup B – Serial Port and Board Selection
 
 * Connect the Arduino to your computer via the USB cable. A green light should turn on on the Arduino board.
-
 * Mac Port Selection: Go to the Tools menu and hover over Serial Port. You’ll see a list of ports. One will begin with /dev/tty.usbmodem and one will begin with /dev/cu.usbmodem. Select one of these two.
 * Mac Board Selection: Go to the Tools menu and hover over Board. Select the type of board you are using (in this case, Arduino Uno).
 * PC Port Selection: Go to the Tools menu and hover over Port. There is typically only one choice, "COM3" or higher.
@@ -160,7 +159,6 @@ Now we're going to work with sound instead of light, using a piezo. A piezo is a
 *Image of piezo buzzer/sounder care of Adafruit.*
 
 <img src="DHSIArduinoImages/playScale.jpg">
-<img src="DHSIArduinoImages/playScale2.jpg">
 
 *Image care of Simon Monk (<https://learn.adafruit.com/adafruit-arduino-lesson-10-making-sounds/playing-a-scale>).*
 
@@ -174,6 +172,7 @@ Now we're going to work with sound instead of light, using a piezo. A piezo is a
   * Use [this list](http://www.phy.mtu.edu/~suits/notefreqs.html) to find the frequency for each note (C4 = middle C).
   * You can also modify the length of each note by adding a comma and an extra value after `tones[i]` (see the [Reference page](https://www.arduino.cc/en/Reference/Tone) for `tone()`). For example, to play each note for half a second, the whole line would read as `tone(speakerPin, tones[i], 500);`, where 500 is the length in milliseconds.
   * As with Exercise 2, you can also change the value in `delay()` to shorten or lengthen the delay (in milliseconds) between each note.
+* Try incorporating a button into your circuit and sketch so that the sound only plays if you press the button. Hint: you might want to take a look at the code for the Button exercise again (*File > Examples > 2. Digital > Button*).
 
 ####Example Projects
 * Knock: <https://www.youtube.com/watch?v=1SNC3ib10_4>. This project uses a piezo as a sensor instead of an actuator.
@@ -187,6 +186,10 @@ Now we're going to work with sound instead of light, using a piezo. A piezo is a
 
 Next, let’s incorporate analog input. Instead of allowing for only two states (On/Off or High/Low), analog input translates voltage (from 0 to 5 volts) into numbers between 0 and 1024. For this exercise, we're going to use a potentiometer, or "pot," to modify the piezo's pitch.
 
+<img src="DHSIArduinoImages/potentiometer.jpg">
+
+*Image of potentiometer, care of notey.com.*
+
 <img src="DHSIArduinoImages/tonePitchFollower.png"/>
 
 *Image care of Oscar Liang. (<https://oscarliang.com/using-potentiometer-to-control-piezo-speaker-for-v/>)*
@@ -199,7 +202,6 @@ Next, let’s incorporate analog input. Instead of allowing for only two states 
 * Click the magnifying glass at the top right hand corner of the IDE. The window that just popped up is called the Serial Monitor, which communicates information between the board and your laptop. If everything is working, you should see a stream of neverending numbers that correspond to the signal/value of analog pin A0 coming from your pot (this is the value that Arduino is using to calculate the pitch). Twist the pot to watch the number change. The Serial Monitor can be useful for debugging; for instance, if you don't see numbers showing up in the Monitor, then you know the problem is sensing input from the pot. To learn more about printing information to the Serial Monitor, see the [AnalogReadSerial exercise](https://www.arduino.cc/en/Tutorial/AnalogReadSerial).
 
 ####More Things to Try
-* Feel like a challenge? Try incorporating a button into your circuit and sketch so that the sound only plays if you press the button. Hint: you might want to take a look at the code for the Button exercise again (*File > Examples > 2. Digital > Button*).
 * Throwback to earlier today when we were blinking LEDs. Try [this exercise](https://github.com/uvicmakerlab/dhsi2015/blob/master/DHSI2015ArduinoNotes.md#exercise-3--using-a-potentiometer-for-analog-input) from last year's DHSI to use the potentiometer to adjust the blinking speed of an LED.
 
 
