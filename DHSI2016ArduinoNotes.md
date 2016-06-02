@@ -21,42 +21,41 @@
 
 ## <a name="intro"></a> What is Arduino?
 
-An Arduino is basically an open source, tiny computer made for tinkering, prototyping. It can also be used as a dedicated component in an interactive project (e.g. soldered to other parts or sewn into clothing)—hence the small size and lowish cost. Arduino combines open-source hardware, an integrated development environment (IDE) software, and a simplified version of the C/C++ programming languages that even non-programmers can use to write code for the Arduino board.
+An Arduino is an open source, tiny computer made for tinkering, prototyping. It can also be used as a dedicated component in an interactive project (e.g. soldered to other parts or sewn into clothing)—hence the small size and lowish cost. Arduino combines open-source hardware, an integrated development environment (IDE) software, and a simplified version of the C/C++ programming languages that even non-programmers can use to write code for the Arduino board.
 
-In this module, we will be using the Arduino for *physical computing*—that is, to sense and interact with the physical world. In practice, this involves converting one form of energy into another: for example, electrical signals into some kind of physical energy (e.g. light, sound, motion) or vice versa. When combined with other components or computers (e.g. the [Raspberry Pi](https://www.raspberrypi.org/help/what-is-a-raspberry-pi/)), the Arduino can do even more complicated things. Arduinos are commonly used in home monitoring projects (e.g. tripwire alarm, thermostat), wearables, and robotics. Throughout, I will talk about some example projects out in the wild that build on concepts we learn.
+In this module, we will be using the Arduino for *physical computing*—that is, to sense and interact with the physical world. In practice, this involves converting one form of energy into another: for example, some kind of physical energy (e.g. light, sound, motion) into electrical signals and/or vice versa. When combined with other components or computers (e.g. the [Raspberry Pi](https://www.raspberrypi.org/help/what-is-a-raspberry-pi/)), the Arduino can do even more complicated things. Arduinos are commonly used for home monitoring projects (e.g. tripwire alarm, thermostat), wearables, and robotics. Throughout this module, I will briefly mention some example projects out in the wild that build on concepts we learn.
 
 <img src="DHSIArduinoImages/interactiveDevice.png"/>
 *"The Interactive Device," from* Getting Started with Arduino *by Massimo Banzi.*
 
 ## <a name="terminology"></a>Some Terminology
 
-*Thanks to Nina Belojevic and Shaun MacPherson, who wrote/compiled the majority of this list, as well as the set up instructions, for [DHSI 2015](https://github.com/uvicmakerlab/dhsi2015/blob/master/DHSI2015ArduinoNotes.md)*
-
+* **Analog I/O**: Analog input and output expresses the voltage level across a variable resistance as numerical values. In other words, unlike digital I/O, which has only two states, analog values can have a range of states (on the Arduino, the input voltage can be expressed as a value between 0 and 1023)—analog I/O works like a dial or a slider.
 * **Arduino**: An open-source hardware platform that consists of a board with a programmable microcontroller; various power, input, and output pins; some LEDs; and a USB connector. The Arduino works with an integrated development environment (IDE), the software used to program the board to behave in a certain way. Its hardware reference designs are distributed under a Creative Commons Attribution Share-Alike license, which means that anyone can make their own Arduino based on the original design.
 * **Breadboard**: A type of prototyping board that enables you to design circuits without having to solder the components. Essential for designing things with Arduino.
+* **Components**:  Parts of a circuit that change the behaviour of an electrical current. This includes sensors, such as buttons, potentiometers, and photoresistors, as well as resistors, capacitors, transistors, batteries, and jumper wires.
+* **Digital I/O**: Digital I/O is expressed as a string of binary commands (1s and 0s, which each indicate an on/off state). In an * Arduino, whether the value is 1 or 0 is usually determined by the voltage: when the voltage is above a threshold, the Arduino reads this as “on,” and when the voltage is below the threshold, it is read as “off.” In other words, there are only two states. On and off—digital I/O basically works like a switch.
+* **Input and Output (I/O)**: The communication between the computer/microcontroller system and the outside world through signals or data. Input is received by the system, and output is sent from the system.
+* **Integrated Development Environment or IDE**: a special software program designed for you to write sketches that can be loaded onto your Arduino to effect certain behaviours. The programming language for Arduino is modelled after Processing (https://processing.org/download/) and based on the C/C++ languages. The software has a compiler built into it, which translates the sketch you write into a language understood by the Arduino microcontroller.
+* **LED**: A light-emitting diode (LED) is a type of semiconductor: it only allows electricity to flow in one direction. When connected to a suitable voltage, LEDs release energy in the form of photons; this process is called electroluminescence, which is responsible for the production of different colours of light (depending on the energy of the photon released).
 * **Microcontroller**: A small computer that is contained within an integrated circuit, or IC (otherwise known as a microchip). Microcontrollers are programmed to perform sets of simple operations, and are found in most devices (a thermostat, a car’s computer, etc.).
 * **Open source**: A development model started within the software programming community that promotes universal access to source code and decentralized modes of peer-production to counter the model of proprietary, “black-boxed” code. More recently, the term “open source” (coined by nanotechnologist Christine Peterson) has been applied to hardware, where hardware developers freely share their designs with an intent to enable others to build or alter their original designs.
-* **Components**:  Parts of a circuit that change the behaviour of an electrical current. This includes sensors, such as buttons, potentiometers, and photoresistors, as well as resistors, capacitors, transistors, batteries, and hookup wire. 
-* **Input and Output (I/O)**: The communication between the computer/microcontroller system and the outside world through signals or data. Input is received by the system, and output is sent from the system.
-* **Digital I/O**: Digital I/O is expressed as a string of binary commands (1s and 0s, which each indicate an on/off state). In an * Arduino, whether the value is 1 or 0 is usually determined by the voltage: when the voltage is above a threshold, the Arduino reads this as “on,” and when the voltage is below the threshold, it is read as “off.” In other words, there are only two states. On and off—digital I/O basically works like a switch.
-* **Analog I/O**: Analog input and output expresses the voltage level across a variable resistance as numerical values. In other words, unlike digital I/O, which has only two states, analog values can have a range of states (on the Arduino, the input voltage can be expressed as a value between 0 and 1023)—analog I/O works like a dial or a slider.
-* **Sensors and Actuators**: These are electronic components that allow the microcontroller to communicate with its environment. Sensors sense various aspects of their environment (light, capacitance, temperature, etc.) and translate them into electricity that the Arduino can read so decisions can be made based on the code you wrote. Actuators then perform certain behaviours (e.g. an LED lighting up or a motor spinning) through the reverse process of transduction (converting code to electricity to light, movement, etc.).
-* **Resistance**: Resistance, measured in ohms (Ω), hinders the flow of electric current. With the Arduino, resistance is important in the context of sensor expression—a sensor expresses its outputted data as a resistance value. For example, a photoresistor increases the resistance to the current it outputs to the Arduino when it is exposed to more light, and decreases the output when less light is exposed.
-* **LED**: A light-emitting diode (LED) is a type of semiconductor: it only allows electricity to flow in one direction. When connected to a suitable voltage, LEDs release energy in the form of photons; this process is called electroluminescence, which is responsible for the production of different colours of light (depending on the energy of the photon released).
-* **Potentiometer** or "pot": a potentiometer is a type of variable analog resistor that allows an operator to change the level of resistance by turning a dial, which is connected to a wiper that shortens or lengthens the part of a strip of conductive material that is exposed to the electrical current.
 * **Photoresistor**: Variously called a photoresistor, a light-dependant resistor (LDR), or a photocell, this component variates its resistance according to how much light it is exposed to—typically, a photoresistor will range from 50 ohms to 1k ohms (i.e. less resistance) in direct exposure and from 5k ohms to several MegaOhms (i.e. more resistance) in the dark.
-* **Servomotor** or "servo": a servomotor is a type of rotary actuator that receives data that directs its speed and final position. This data is typically controlled by some kind of variable resistance, such as a potentiometer or photoresistor.
-* **The Arduino Integrated Development Environment (IDE)**: a special software program designed for you to write sketches that can be loaded onto your Arduino to effect certain behaviours. The programming language for Arduino is modelled after Processing (https://processing.org/download/) and based on the C/C++ languages. The software has a compiler built into it, which translates the sketch you write into a language understood by the Arduino microcontroller.
-* **Sketch**: the block of code that you write, import, and/or upload to run on the Arduino board. This is what shows up in the whit part of the IDE window.
+* **Potentiometer** or "pot": a potentiometer is a type of variable analog resistor that allows an operator to change the level of resistance by turning a dial, which is connected to a wiper that shortens or lengthens the part of a strip of conductive material that is exposed to the electrical current.
 * **Piezo**: this term can refer to either a sensor or actuator of sound. We will mostly use it as an actuator, where it is commonly called a "piezo buzzer" or "piezo sounder." When an electric signal passes through a crystal in the piezo, it rapidly expands and contracts at a frequency that we interpret as sound.
+* **Resistance**: Resistance, measured in ohms (Ω), hinders the flow of electric current. With the Arduino, resistance is important in the context of sensor expression—a sensor expresses its outputted data as a resistance value. For example, a photoresistor increases the resistance to the current it outputs to the Arduino when it is exposed to more light, and decreases the output when less light is exposed.
+* **Sensors and Actuators**: These are electronic components that allow the microcontroller to communicate with its environment. Sensors sense various aspects of their environment (light, capacitance, temperature, etc.) and translate them into electricity that the Arduino can read so decisions can be made based on the code you wrote. Actuators then perform certain behaviours (e.g. an LED lighting up or a motor spinning) through the reverse process of transduction (converting code to electricity to light, movement, etc.).
 * **Serial Monitor**: a built-in feature of the IDE that is useful for debugging or troubleshooting. For example, you can check values from various sensors in real time by printing them to the monitor.
+* **Servomotor** or "servo": a servomotor is a type of rotary actuator that receives data that directs its speed and final position. This data is typically controlled by some kind of variable resistance, such as a potentiometer or photoresistor.
+* **Sketch**: the block of code that you write, import, and/or upload to run on the Arduino board. This is what shows up in the white part of the IDE window.
+
 
 ## <a name="setup-a"></a> Setup A – Install the IDE
 
 * Download Arduino software (<http://www.arduino.cc/en/Main/Software>) 
 * Mac: Once you’ve downloaded the IDE, you should see it in your downloads folder (or in the folder that your downloaded files get saved in). You should now be able to open the IDE by double clicking on the icon. Feel free to move it into a different folder (e.g. Applications). Once you’ve opened the software, plug in the USB connector we’ve provided.
-* PC: When you download the Arduino IDE, you should be prompted to install Arduino. Follow the directions and install it in your Program Files or whereever you would like to save it to. Once the process is complete, open the Arduino program and plug in the USB connector we’ve provided.
-* A Note on High DPI monitors: If your computer is fairly new, you might notice that the IDE's font is very tiny. If this happens, go to *File > Preferences*. Under *Interface Scale*, uncheck *Automatic* and increase the percentage next to it. It may take a bit of experimentation to get the scale right (remember that you have to restart the IDE each time you adjust it). You can also adjust the font size of the code in the window by changing *Editor Font Size*.
+* PC: When you download the Arduino IDE, you should be prompted to install Arduino. Follow the directions and install it in your Program Files or wherever you would like to save it to. Once the process is complete, open the Arduino program and plug in the USB connector we’ve provided.
+* A Note on High DPI monitors: If your computer is fairly new, you might notice that the IDE's text is very tiny. If this happens, go to *File > Preferences*. Under *Interface Scale*, uncheck *Automatic* and increase the percentage next to it to make the text bigger. It may take a bit of experimentation to get the scale right (remember that you have to restart the IDE each time you adjust it). You can also adjust the font size of the code in the window by changing *Editor Font Size*.
 
 ## <a name="setup-b"></a>Setup B – Serial Port and Board Selection
 
@@ -84,9 +83,9 @@ In this module, we will be using the Arduino for *physical computing*—that is,
 *Image of the breadboard, care of learn.sparkfun.com*
 
 ### The breadboard:
-* Current runs vertically down the outer 2 columns (+/-) on each side and horizontally across the inside 10 columns (a-j)
-  * e.g. if you connect a jumper cable to b4 and an LED to g4, they become part of the same circuit
-* For some of the exercises, we will be connecting sensors and actuators to the breadboard and connecting the breadboard to the Arduino board
+* Current runs vertically down the outer 2 columns (+/-) on each side and horizontally across the inside 10 columns (a-e and f-j)
+  * e.g. if you connect a jumper wire to b4 and an LED to d4, they become part of the same circuit
+* For some of the exercises, we will be connecting components to the breadboard and connecting the breadboard to the Arduino board to power them.
 
 <img src="DHSIArduinoImages/IDE.png">
 
@@ -125,8 +124,8 @@ In this module, we will be using the Arduino for *physical computing*—that is,
 
 Now that we have the LED blinking, let’s add a button as a digital input sensor to control when it turns on or off.
 
-* For this exercise, we are going to connect the power source to two of the columns on the breadboard. Connect the 5V pin to the (+) column and the GND pin to the (-) column. It doesn't matter which side of breadboard you use — just make sure the (+) and (-) column you connect are on the same side. Now any sensor or actuator you connect to (+) on the breadboard will be connected to 5V and any sensor or actuator you connect to (-) on the breadboard will be connected to GND.
-  * For more on the breadboard, see here: <http://www.instructables.com/id/Breadboard-How-To/>
+* For this exercise, we are going to connect the power source to two of the columns on the breadboard. Connect the 5V pin to the (+) column and the GND pin to the (-) column. (Make sure the (+) and (-) column you connect are on the same side.) Now any sensor or actuator you connect to (+) on the breadboard will be connected to 5V and any sensor or actuator you connect to (-) on the breadboard will be connected to GND.
+* For more on the breadboard, see here: http://www.instructables.com/id/Breadboard-How-To/
 * Insert the button across the middle bridge on the breadboard. Hook up the bottom left leg of the button to 5V on the Arduino. Hook up the top right leg of the button to digital pin 2. Add the 10k Ohm resistor (brown-black-orange) with one leg along the same path as the bottom right leg of the button, and then connect the other leg of the resistor to GND.
 
 ![](DHSIArduinoImages/Image2ButtonFritzing.png)
@@ -139,8 +138,8 @@ Now that we have the LED blinking, let’s add a button as a digital input senso
 ####Further Experiments
 * Change the values inside `delay()`, upload, and see what happens
 * Create different patterns of blinking on and off
-* Fade the LED (<https://www.arduino.cc/en/Tutorial/Fade>).
-* Count the number of button presses (<https://www.arduino.cc/en/Tutorial/StateChangeDetection>).
+* Fade the LED: <https://www.arduino.cc/en/Tutorial/Fade>
+* Count the number of button presses: <https://www.arduino.cc/en/Tutorial/StateChangeDetection>
 
 ####Example Projects
 * Spaceship Interface: <https://www.arduino.cc/en/ArduinoStarterKit/Prj02>
@@ -150,9 +149,9 @@ Now that we have the LED blinking, let’s add a button as a digital input senso
 
 ## <a name="three"></a>Exercise 3 - LED to Piezo
 
-Now we're going to work with sound instead of light, using a piezo. A piezo is a small device that can both detect and play tones (that is, it can act as a sensor or an actuator). For this exercise, we're going to use it to play some notes.
+Now we're going to work with sound instead of light, using a piezo. A piezo is a small device that can both detect and play tones (that is, it can act as a sensor or an actuator). For this exercise, we're going to use it to play a short melody.
 
-![](DHSIArduinoImages/piezo.jpg)
+<img src="DHSIArduinoImages/piezo.jpg" width="600">
 *Image of piezo buzzer/sounder care of Adafruit.*
 
 <img src="DHSIArduinoImages/playScale.jpg">
@@ -183,20 +182,18 @@ Now we're going to work with sound instead of light, using a piezo. A piezo is a
 
 Next, let’s incorporate analog input. Instead of allowing for only two states (On/Off or High/Low), analog input translates voltage (from 0 to 5 volts) into numbers between 0 and 1024. For this exercise, we're going to use a potentiometer, or "pot," to modify the piezo's pitch.
 
-<img src="DHSIArduinoImages/potentiometer.jpg">
+<img src="DHSIArduinoImages/potentiometer.jpg" />
 
 *Image of potentiometer, care of notey.com.*
 
-<img src="DHSIArduinoImages/tonePitchFollower.jpg"/>
-
-*Image care of Oscar Liang. (<https://oscarliang.com/using-potentiometer-to-control-piezo-speaker-for-v/>)*
+<img src="DHSIArduinoImages/tonePitchFollower.jpg" width="600" />
 
 * Insert the potentiometer into the breadboard. The pot has three legs: connect the middle leg to analog pin A0, one of the outer legs (doesn't matter which) to (+) or 5V and the other to (-) or GND.
 * If you took the piezo off the breadboard, reattach it. Connect one leg through a 10k ohm resistor (brown-black-orange) to digital Pin 2 and the other to GND.
 * [Click here](sketches/tonePitchFollower.ino) and copy paste the code into a new file.
 * Verify and then upload the code to the Arduino.
 * Twist the potentiometer to change the pitch. To stop playing, unplug the Arduino.
-* Click the magnifying glass at the top right hand corner of the IDE. The window that just popped up is called the Serial Monitor, which communicates information between the board and your laptop. If everything is working, you should see a stream of neverending numbers that correspond to the signal/value of analog pin A0 coming from your pot (this is the value that Arduino is using to calculate the pitch). Twist the pot to watch the number change. The Serial Monitor can be useful for debugging; for instance, if you don't see numbers showing up in the Monitor, then you know the problem is sensing input from the pot. To learn more about printing information to the Serial Monitor, see the [AnalogReadSerial exercise](https://www.arduino.cc/en/Tutorial/AnalogReadSerial).
+* Click the magnifying glass at the top right hand corner of the IDE. The window that just popped up is called the Serial Monitor, which communicates information between the board and your laptop—often for the purposes of debugging (analogous to a console for other programming languages). If everything is working, you should see a stream of neverending numbers that correspond to the signal/value of analog pin A0 coming from your pot (this is the value that Arduino is using to calculate the pitch). Twist the pot to watch the number change. The Serial Monitor can be useful for debugging; for instance, if you don't see numbers showing up in the Monitor, then you know the Arduino is not sensing input properly from the pot. To learn more about printing information to the Serial Monitor, see the [AnalogReadSerial exercise](https://www.arduino.cc/en/Tutorial/AnalogReadSerial).
 
 ####More Things to Try
 * Throwback to earlier today when we were blinking LEDs. Try [this exercise](https://github.com/uvicmakerlab/dhsi2015/blob/master/DHSI2015ArduinoNotes.md#exercise-3--using-a-potentiometer-for-analog-input) from last year's DHSI to use the potentiometer to adjust the blinking speed of an LED.
@@ -211,17 +208,18 @@ You can measure many different kinds of analog input (e.g. temperature, light, m
 *Image of a photocell care of Adafruit. (<https://learn.adafruit.com/photocells/using-a-photocell>)*
 
 <img src="DHSIArduinoImages/pseudotheremin.jpg">
+
 *Diagram care of Simon Monk. (<https://learn.adafruit.com/adafruit-arduino-lesson-10-making-sounds/pseudo-theramin>)*
 
 * The piezo should still be connected to the Arduino from the last exercise. If not, reattach it to the breadboard and Arduino board. Connect one leg to digital Pin 2 and the other to GND.
-* Insert the photocell into the breadboard. Connect one leg to 5V. On a different numbered row on the breadboard, connect the other leg of the photocell, a 1k ohm resistor (brown-black-red) and analog pin A0.
+* Insert the photocell into the breadboard. Connect one leg to 5V. On a different row on the breadboard, connect the other leg of the photocell, a 1k ohm resistor (brown-black-red) and analog pin A0.
 * Connect the other leg of the 1k ohm resistor to GND.
 * Open [this sketch](sketches/pseudoTheremin.ino) and copy/paste the code into your IDE.
 * Compile and upload it.
 * Wave your hand or another object over the photocell to vary the pitch. Try moving your hand closer or farther away from the photocell.
 
 ####More Things to Try
-* Throwback to earlier today when we were blinking LEDs. This extra exercise will adjust the blinking speed of an LED with the help of a photocell. Connect an LED to pin 13 and GND as in the Blink exercise. Swap out your 1k ohm resistor for a 10k ohm resistor (brown-black-orange — yes, they are confusingly similar). Open the analogInput sketch by going to *File > Examples > 3. Analog > AnalogInput*. Upload and compile it. Have fun!
+* Throwback to earlier today when we were blinking LEDs. This extra exercise will adjust the blinking speed of an LED with the help of a photocell. Connect an LED to pin 13 and GND as in the Blink exercise. Swap out your 1k ohm resistor for a 10k ohm resistor (brown-black-orange—yes, they are confusingly similar). Open the analogInput sketch by going to *File > Examples > 3. Analog > AnalogInput*. Upload and compile it. Have fun!
 
 ####Example Projects
 * Laser Trip Wire by Ronnie Tucker: <https://www.youtube.com/watch?v=efA9lwmE5zA>
@@ -233,9 +231,7 @@ You can measure many different kinds of analog input (e.g. temperature, light, m
 
 For this sketch, we will use a different actuator—a servo motor—and control its position using a potentiometer. The sketch we wil use will translate the position of the potentiometer into a coordinate that will instruct the servo to rotate its drive shaft to that fixed position.
 
-![](DHSIArduinoImages/knob.jpg)
-
-*Image 5: Potentiometer-controlled Servo Circuit from Arduino.cc (<http://www.arduino.cc/en/uploads/Tutorial/knob_BB.png>)*
+<img src="DHSIArduinoImages/knob.jpg" width="600" />
 
 * Insert the potentiometer into the breadboard and connecting it as we did for the Exercise 4. Connect the middle leg to analog pin A0, one outside leg to 5V or (+) on the breadboard, and the remaining leg to GND or (-) on the breadboard.
 * Next, we will connect the servo motor. (Note that the wires on your servo motor will be either in the configuration black-red-white or brown-red-orange—these are analogous to each other.) Connect the red wire to a pin on the (+) strip of the breadboard, the black/brown wire to (-), and the white/orange wire to digital pin 9 on the Arduino.

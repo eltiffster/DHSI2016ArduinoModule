@@ -1,5 +1,11 @@
 /*
-Adafruit Arduino - Lesson 10. Simple Sounds
+ * Exercise 3: LED to Piezo
+ * 
+ * Sketch by Tiffany Chan for DHSI 2016.
+ * 
+ * Based on Adafruit's Simple Sounds sketch: 
+ * https://learn.adafruit.com/adafruit-arduino-lesson-10-making-sounds/playing-a-scale
+ * 
 */
 
 int speakerPin = 12;
