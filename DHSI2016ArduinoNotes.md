@@ -132,9 +132,6 @@ Now that we have the LED blinking, let’s add a button as a digital input senso
 ![](DHSIArduinoImages/Image2ButtonFritzing.png)
 *Image 2: Fritzing Circuit from Arduino Tutorials (<http://www.arduino.cc/en/Tutorial/Button>)*
 
-![](DHSIArduinoImages/Image3ButtonSchematic.png)
-*Image 3: Schematic from Arduino Tutorials (<http://www.arduino.cc/en/Tutorial/Button>)*
-
 * Next, open your Arduino IDE and go to *File > Examples > 2. Digital > Button* and open that sketch.
 * Once the code is uploaded and your circuit is built, connect the Arduino to your computer using the USB cable and make sure the correct board and port are selected (under Tools). In the IDE window, click on the checkmark icon to compile the code and make sure there are no errors. If error messages display in the bottom of your window, let’s troubleshoot.
 * Once your code is free of errors, click on the arrow icon in the IDE window to load the code onto the Arduino. Now try to turn on the LED by pushing the button on the circuit. If it’s not working, review all your connections and we can troubleshoot together.
@@ -190,7 +187,7 @@ Next, let’s incorporate analog input. Instead of allowing for only two states 
 
 *Image of potentiometer, care of notey.com.*
 
-<img src="DHSIArduinoImages/tonePitchFollower.png"/>
+<img src="DHSIArduinoImages/tonePitchFollower.jpg"/>
 
 *Image care of Oscar Liang. (<https://oscarliang.com/using-potentiometer-to-control-piezo-speaker-for-v/>)*
 
@@ -236,17 +233,13 @@ You can measure many different kinds of analog input (e.g. temperature, light, m
 
 For this sketch, we will use a different actuator—a servo motor—and control its position using a potentiometer. The sketch we wil use will translate the position of the potentiometer into a coordinate that will instruct the servo to rotate its drive shaft to that fixed position.
 
-![](DHSIArduinoImages/Image6PotServoCircuit.png)
+![](DHSIArduinoImages/knob.jpg)
 
 *Image 5: Potentiometer-controlled Servo Circuit from Arduino.cc (<http://www.arduino.cc/en/uploads/Tutorial/knob_BB.png>)*
 
-![](DHSIArduinoImages/Image7PotServoSchematic.png)
-
-*Image 6: Potentiometer-controlled Servo Circuit schematic from Arduino.cc (<http://www.arduino.cc/en/uploads/Tutorial/knob_schem.png>)*
-
 * Insert the potentiometer into the breadboard and connecting it as we did for the Exercise 4. Connect the middle leg to analog pin A0, one outside leg to 5V or (+) on the breadboard, and the remaining leg to GND or (-) on the breadboard.
 * Next, we will connect the servo motor. (Note that the wires on your servo motor will be either in the configuration black-red-white or brown-red-orange—these are analogous to each other.) Connect the red wire to a pin on the (+) strip of the breadboard, the black/brown wire to (-), and the white/orange wire to digital pin 9 on the Arduino.
-* In the IDE, go to *File > Examples > Servo > Knob* and open that sketch.
+* Copy/paste the code from [this page](https://www.arduino.cc/en/Tutorial/Knob) into the IDE.
 * Compile and upload the sketch.
 * The servo should automatically rotate to the position indicated by the position of the potentiometer. Try rotating the dial on the potentiometer—the servo should move accordingly. It may or may not shake or vibrate—this just means that it’s receiving too much voltage through the upper limit of the potentiometer. Just rotate the potentiometer until the servo runs smoothly.
 
