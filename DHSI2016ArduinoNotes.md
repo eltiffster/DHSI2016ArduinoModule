@@ -267,7 +267,7 @@ For the rest of the session, you can experiment with different combinations of s
 * Light up your 3D-printed coat buttons. Project by Ruiz brothers. (<https://learn.adafruit.com/neopixel-coat-buttons>)
 * The Cover That Judges You by Thijs Biersteker: Scan your face for emotions and unlock a book only when you're straight-faced. (<http://thecoverthatjudgesyou.com/>)
 * Spam Poetry by Varvara Guljajeva and Mar Canet Sola: Knit a spam poetry sweater for you. (<http://www.mcanet.info/blog/?p=404>) 
-* Netflix socks: Automatically pause Netflix when you've fallen asleep watching it. (<http://makeit.netflix.com/>)
+* Netflix socks: Automatically pause Netflix when you've fallen asleep watching it. (<http://makeit.netflix.com/projects/socks>)
 * Electronic Popables by Jie Qi, with Leah Buckley and Tshen Chew. (<http://technolojie.com/454/>)
 
 #### Where can I find more Arduino projects and/or tutorials?
